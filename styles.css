@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    background: #333;
+    overflow: hidden;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.navbar .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 14px 20px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    position: relative;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    display: block;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li .dropbtn:hover {
+    background: #555;
+}
+
+.navbar nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.navbar nav ul li .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.navbar nav ul li .dropdown-content a:hover {
+    background-color: #555;
+}
+
+.navbar nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    margin: 4px 0;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.services, .about, .case-studies {
+    background: #f4f4f4;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.services {
+    position: relative;
+}
+
+.service-box {
+    display: flex;
+    gap: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service {
+    flex: 1;
+    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, left 0.5s ease-in-out; /* Added transition for left property */
+    position: absolute; /* Added position absolute */
+    top: 0; /* Set top to 0 */
+}
+
+.service.active {
+    opacity: 1;
+    left: 0; /* Move to left */
+}
+
+.service.inactive {
+    left: 100%; /* Move to right */
+}
+
+.case-study {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact form input,
+.contact form textarea {
+    background: #fff;
+    color: #000;
+}
+
+.contact form button {
+    background: #555;
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact form button:hover {
+    background: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    .navbar nav ul li {
+        text-align: center;
+    }
+
+    .navbar nav ul li .dropdown-content {
+        position: relative;
+        width: 100%;
+    }
+
+    .navbar nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .services .service-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service {
+        width: 100%;
+        margin-bottom: 20px;
+        position: static; /* Reset position for responsiveness */
+    }
+}
